@@ -1,0 +1,36 @@
+# Godot 4+ specific ignores
+.godot/
+*.import
+*.translation
+
+# Godot-specific files
+export_presets.cfg
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Build outputs
+builds/
+exports/
+*.exe
+*.pck
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
