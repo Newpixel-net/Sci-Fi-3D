@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_base.gd" id="1_enemy"]
 [ext_resource type="Resource" uid="uid://heavy_data" path="res://resources/enemy_data/heavy_data.tres" id="2_data"]
-[ext_resource type="PackedScene" uid="uid://trilobite" path="res://assets/models/Enemy_Trilobite.gltf" id="3_model"]
+[ext_resource type="PackedScene" uid="uid://trilobite" path="res://assets/models/sci-fi/enemies/Enemy_Trilobite.gltf" id="3_model"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_heavy"]
 radius = 0.8

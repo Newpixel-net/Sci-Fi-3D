@@ -6,13 +6,24 @@
 [ext_resource type="Script" uid="uid://cdn3bmf4mumx8" path="res://scripts/weapons/weapon_manager.gd" id="3_weapon_mgr"]
 [ext_resource type="Script" uid="uid://det5obqyas3r7" path="res://scripts/weapons/weapon_base.gd" id="4_weapon"]
 [ext_resource type="Resource" path="res://resources/weapon_data/pistol_data.tres" id="5_pistol"]
-[ext_resource type="PackedScene" uid="uid://cqfkup3xaroom" path="res://assets/models/Gun_Pistol.gltf" id="6_pistol_model"]
+[ext_resource type="PackedScene" uid="uid://cqfkup3xaroom" path="res://assets/models/sci-fi/weapons/Gun_Pistol.gltf" id="6_pistol_model"]
 [ext_resource type="Resource" path="res://resources/weapon_data/rifle_data.tres" id="6_rifle_data"]
-[ext_resource type="PackedScene" uid="uid://kcy0bfip158e" path="res://assets/models/Gun_Rifle.gltf" id="6_rifle_model"]
+[ext_resource type="PackedScene" uid="uid://kcy0bfip158e" path="res://assets/models/sci-fi/weapons/Gun_Rifle.gltf" id="6_rifle_model"]
 [ext_resource type="Resource" path="res://resources/weapon_data/sniper_data.tres" id="6_sniper_data"]
-[ext_resource type="PackedScene" uid="uid://cd4yhdlcxnv2c" path="res://assets/models/Gun_Sniper.gltf" id="6_sniper_model"]
-[ext_resource type="PackedScene" uid="uid://ct44rutcao1em" path="res://assets/models/Prop_Crate_Large.gltf" id="7_crate"]
-[ext_resource type="PackedScene" uid="uid://clvro686u6yxk" path="res://assets/models/Prop_Barrel1.gltf" id="8_barrel"]
+[ext_resource type="PackedScene" uid="uid://cd4yhdlcxnv2c" path="res://assets/models/sci-fi/weapons/Gun_Sniper.gltf" id="6_sniper_model"]
+[ext_resource type="PackedScene" uid="uid://ct44rutcao1em" path="res://assets/models/sci-fi/props/Prop_Crate_Large.gltf" id="7_crate"]
+[ext_resource type="PackedScene" uid="uid://clvro686u6yxk" path="res://assets/models/sci-fi/props/Prop_Barrel1.gltf" id="8_barrel"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Crate.gltf" id="8_crate_small"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Barrel2_Closed.gltf" id="8_barrel2"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Desk_Medium.gltf" id="8_desk"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Shelves_WideTall.gltf" id="8_shelves"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_HealthPack.gltf" id="8_health"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Ammo_Closed.gltf" id="8_ammo"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Locker.gltf" id="8_locker"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_SatelliteDish.gltf" id="8_satellite"]
+[ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Chest.gltf" id="8_chest"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Floor_Brick.gltf" id="9_floor_brick"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Floor_UnevenBrick.gltf" id="9_floor_uneven"]
 [ext_resource type="Script" uid="uid://xkvpvmdxp5ry" path="res://scripts/enemies/enemy_spawner.gd" id="9_spawner"]
 [ext_resource type="Script" uid="uid://un2fpdutm33p" path="res://scripts/systems/wave_manager.gd" id="10_wave"]
 [ext_resource type="Script" uid="uid://85nhpc601br7" path="res://scripts/ui/hud.gd" id="11_hud"]
@@ -55,6 +66,129 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(30, 1, 30)
+visible = false
+
+[node name="MedievalFloor" type="Node3D" parent="Arena"]
+
+[node name="Tile_0_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -12.5)
+
+[node name="Tile_1_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -12.5)
+
+[node name="Tile_2_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -12.5)
+
+[node name="Tile_3_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -12.5)
+
+[node name="Tile_4_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -12.5)
+
+[node name="Tile_5_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -12.5)
+
+[node name="Tile_0_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -7.5)
+
+[node name="Tile_1_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -7.5)
+
+[node name="Tile_2_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -7.5)
+
+[node name="Tile_3_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -7.5)
+
+[node name="Tile_4_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -7.5)
+
+[node name="Tile_5_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -7.5)
+
+[node name="Tile_0_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -2.5)
+
+[node name="Tile_1_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -2.5)
+
+[node name="Tile_2_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
+
+[node name="Tile_3_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+
+[node name="Tile_4_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2.5)
+
+[node name="Tile_5_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -2.5)
+
+[node name="Tile_0_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 2.5)
+
+[node name="Tile_1_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+
+[node name="Tile_2_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="Tile_3_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="Tile_4_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+
+[node name="Tile_5_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 2.5)
+
+[node name="Tile_0_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 7.5)
+
+[node name="Tile_1_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
+
+[node name="Tile_2_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
+
+[node name="Tile_3_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+
+[node name="Tile_4_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 7.5, 0, 7.5)
+
+[node name="Tile_5_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 7.5)
+
+[node name="Tile_0_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 12.5)
+
+[node name="Tile_1_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 12.5)
+
+[node name="Tile_2_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 12.5)
+
+[node name="Tile_3_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 12.5)
+
+[node name="Tile_4_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 12.5)
+
+[node name="Tile_5_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 12.5)
+
+[node name="Tile_Weathered_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(0.94, 0, 0.34, 0, 1, 0, -0.34, 0, 0.94, -10, 0, -10)
+
+[node name="Tile_Weathered_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(0.87, 0, -0.5, 0, 1, 0, 0.5, 0, 0.87, 11, 0, -9)
+
+[node name="Tile_Weathered_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(0.71, 0, 0.71, 0, 1, 0, -0.71, 0, 0.71, -11, 0, 10)
+
+[node name="Tile_Weathered_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 11)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Arena"]
 
@@ -67,19 +201,79 @@ size = Vector3(28, 0.1, 28)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
 
 [node name="Crate2" parent="Arena/Props" instance=ExtResource("7_crate")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6994753, 0.016724586, 5.0805473)
-
-[node name="Barrel1" parent="Arena/Props" instance=ExtResource("8_barrel")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3)
-
-[node name="Barrel2" parent="Arena/Props" instance=ExtResource("8_barrel")]
-transform = Transform3D(1, 0, 0, 0, 0.9798655, 0.19965865, 0, -0.19965865, 0.9798655, 7, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7, 0, 5.1)
 
 [node name="Crate3" parent="Arena/Props" instance=ExtResource("7_crate")]
 transform = Transform3D(0.7, 0, 0.7, 0, 1, 0, -0.7, 0, 0.7, 0, 0, 8)
 
 [node name="Crate4" parent="Arena/Props" instance=ExtResource("7_crate")]
 transform = Transform3D(0.7, 0, -0.7, 0, 1, 0, 0.7, 0, 0.7, 0, 0, -8)
+
+[node name="CrateSmall1" parent="Arena/Props" instance=ExtResource("8_crate_small")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[node name="CrateSmall2" parent="Arena/Props" instance=ExtResource("8_crate_small")]
+transform = Transform3D(0.9, 0, 0.44, 0, 1, 0, -0.44, 0, 0.9, 3, 0, 7)
+
+[node name="CrateSmall3" parent="Arena/Props" instance=ExtResource("8_crate_small")]
+transform = Transform3D(0.87, 0, -0.5, 0, 1, 0, 0.5, 0, 0.87, -8, 0, 4)
+
+[node name="Barrel1" parent="Arena/Props" instance=ExtResource("8_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3)
+
+[node name="Barrel2" parent="Arena/Props" instance=ExtResource("8_barrel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -3)
+
+[node name="Barrel3" parent="Arena/Props" instance=ExtResource("8_barrel2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+
+[node name="Barrel4" parent="Arena/Props" instance=ExtResource("8_barrel2")]
+transform = Transform3D(0.94, 0, 0.34, 0, 1, 0, -0.34, 0, 0.94, -9, 0, -2)
+
+[node name="Barrel5" parent="Arena/Props" instance=ExtResource("8_barrel2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -9)
+
+[node name="Desk1" parent="Arena/Props" instance=ExtResource("8_desk")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -10, 0, -7)
+
+[node name="Desk2" parent="Arena/Props" instance=ExtResource("8_desk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7)
+
+[node name="Shelves1" parent="Arena/Props" instance=ExtResource("8_shelves")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 11, 0, 0)
+
+[node name="Shelves2" parent="Arena/Props" instance=ExtResource("8_shelves")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -11, 0, 5)
+
+[node name="Locker1" parent="Arena/Props" instance=ExtResource("8_locker")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 8)
+
+[node name="Locker2" parent="Arena/Props" instance=ExtResource("8_locker")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 8)
+
+[node name="Locker3" parent="Arena/Props" instance=ExtResource("8_locker")]
+transform = Transform3D(0.71, 0, -0.71, 0, 1, 0, 0.71, 0, 0.71, 6, 0, -10)
+
+[node name="SatelliteDish1" parent="Arena/Props" instance=ExtResource("8_satellite")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 11, 0, -9)
+
+[node name="Chest1" parent="Arena/Props" instance=ExtResource("8_chest")]
+transform = Transform3D(0.87, 0, 0.5, 0, 1, 0, -0.5, 0, 0.87, -4, 0, 10)
+
+[node name="Chest2" parent="Arena/Props" instance=ExtResource("8_chest")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -7)
+
+[node name="HealthPack1" parent="Arena/Props" instance=ExtResource("8_health")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 10)
+
+[node name="HealthPack2" parent="Arena/Props" instance=ExtResource("8_health")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.2, -10)
+
+[node name="AmmoBox1" parent="Arena/Props" instance=ExtResource("8_ammo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -3)
+
+[node name="AmmoBox2" parent="Arena/Props" instance=ExtResource("8_ammo")]
+transform = Transform3D(0.94, 0, 0.34, 0, 1, 0, -0.34, 0, 0.94, -9, 0, 7)
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
