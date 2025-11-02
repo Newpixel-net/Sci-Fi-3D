@@ -23,7 +23,12 @@ func _ready() -> void:
 
 	# Setup weapon manager
 	if weapon_manager:
-		weapon_manager.weapons = weapon_manager.get_children()
+		# Properly type the weapons array as Array[Node3D]
+		var weapon_nodes: Array[Node3D] = []
+		for child in weapon_manager.get_children():
+			if child is Node3D:
+				weapon_nodes.append(child)
+		weapon_manager.weapons = weapon_nodes
 		weapon_manager.switch_weapon(0)
 		print("Weapon manager initialized with %d weapons" % weapon_manager.weapons.size())
 
