@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+weapon_name = "Pistol"
+weapon_type = "pistol"
+base_damage = 15.0
+headshot_multiplier = 2.5
+fire_rate = 5.0
+auto_fire = false
+magazine_size = 12
+max_ammo = 120
+unlimited_ammo = false
+reload_time = 1.5
+base_spread = 0.01
+max_spread = 0.05
+spread_increase_per_shot = 0.015
+spread_recovery_rate = 0.08
+projectile_speed = 150.0
+projectile_lifetime = 2.0
+is_hitscan = true
+recoil_strength = 0.08
+muzzle_flash_enabled = true
+shell_ejection_enabled = true

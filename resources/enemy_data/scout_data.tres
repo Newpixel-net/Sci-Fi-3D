@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enemy_name = "Scout Robot"
+enemy_type = "scout"
+max_health = 30.0
+move_speed = 6.0
+rotation_speed = 8.0
+damage = 5.0
+attack_range = 1.5
+attack_cooldown = 1.0
+detection_range = 35.0
+credit_value = 50
+aggression = 1.5
+retreat_health_threshold = 0.1
