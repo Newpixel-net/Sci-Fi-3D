@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Locker.gltf" id="8_locker"]
 [ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_SatelliteDish.gltf" id="8_satellite"]
 [ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Chest.gltf" id="8_chest"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Floor_Brick.gltf" id="9_floor_brick"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Floor_UnevenBrick.gltf" id="9_floor_uneven"]
 [ext_resource type="Script" uid="uid://xkvpvmdxp5ry" path="res://scripts/enemies/enemy_spawner.gd" id="9_spawner"]
 [ext_resource type="Script" uid="uid://un2fpdutm33p" path="res://scripts/systems/wave_manager.gd" id="10_wave"]
 [ext_resource type="Script" uid="uid://85nhpc601br7" path="res://scripts/ui/hud.gd" id="11_hud"]
@@ -64,6 +66,129 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(30, 1, 30)
+visible = false
+
+[node name="MedievalFloor" type="Node3D" parent="Arena"]
+
+[node name="Tile_0_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -12.5)
+
+[node name="Tile_1_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -12.5)
+
+[node name="Tile_2_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -12.5)
+
+[node name="Tile_3_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -12.5)
+
+[node name="Tile_4_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -12.5)
+
+[node name="Tile_5_0" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -12.5)
+
+[node name="Tile_0_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -7.5)
+
+[node name="Tile_1_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -7.5)
+
+[node name="Tile_2_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -7.5)
+
+[node name="Tile_3_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -7.5)
+
+[node name="Tile_4_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -7.5)
+
+[node name="Tile_5_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -7.5)
+
+[node name="Tile_0_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, -2.5)
+
+[node name="Tile_1_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -2.5)
+
+[node name="Tile_2_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
+
+[node name="Tile_3_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+
+[node name="Tile_4_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2.5)
+
+[node name="Tile_5_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -2.5)
+
+[node name="Tile_0_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 2.5)
+
+[node name="Tile_1_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+
+[node name="Tile_2_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="Tile_3_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+
+[node name="Tile_4_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+
+[node name="Tile_5_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 2.5)
+
+[node name="Tile_0_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 7.5)
+
+[node name="Tile_1_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
+
+[node name="Tile_2_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
+
+[node name="Tile_3_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+
+[node name="Tile_4_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 7.5, 0, 7.5)
+
+[node name="Tile_5_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 7.5)
+
+[node name="Tile_0_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0, 12.5)
+
+[node name="Tile_1_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 12.5)
+
+[node name="Tile_2_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 12.5)
+
+[node name="Tile_3_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 12.5)
+
+[node name="Tile_4_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 12.5)
+
+[node name="Tile_5_5" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 12.5)
+
+[node name="Tile_Weathered_1" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(0.94, 0, 0.34, 0, 1, 0, -0.34, 0, 0.94, -10, 0, -10)
+
+[node name="Tile_Weathered_2" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(0.87, 0, -0.5, 0, 1, 0, 0.5, 0, 0.87, 11, 0, -9)
+
+[node name="Tile_Weathered_3" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(0.71, 0, 0.71, 0, 1, 0, -0.71, 0, 0.71, -11, 0, 10)
+
+[node name="Tile_Weathered_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 11)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Arena"]
 
