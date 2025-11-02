@@ -155,7 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
 
 [node name="Tile_4_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 7.5, 0, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 7.5)
 
 [node name="Tile_5_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_brick")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 7.5)
