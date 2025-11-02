@@ -7,6 +7,10 @@
 [ext_resource type="Script" path="res://scripts/weapons/weapon_base.gd" id="4_weapon"]
 [ext_resource type="Resource" uid="uid://pistol_data" path="res://resources/weapon_data/pistol_data.tres" id="5_pistol"]
 [ext_resource type="PackedScene" path="res://assets/models/Gun_Pistol.gltf" id="6_pistol_model"]
+[ext_resource type="Resource" path="res://resources/weapon_data/rifle_data.tres" id="6_rifle_data"]
+[ext_resource type="PackedScene" path="res://assets/models/Gun_Rifle.gltf" id="6_rifle_model"]
+[ext_resource type="Resource" path="res://resources/weapon_data/sniper_data.tres" id="6_sniper_data"]
+[ext_resource type="PackedScene" path="res://assets/models/Gun_Sniper.gltf" id="6_sniper_model"]
 [ext_resource type="PackedScene" path="res://assets/models/Prop_Crate_Large.gltf" id="7_crate"]
 [ext_resource type="PackedScene" path="res://assets/models/Prop_Barrel1.gltf" id="8_barrel"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_spawner.gd" id="9_spawner"]
@@ -29,10 +33,17 @@ size = Vector3(0.2, 0.1, 0.5)
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
-background_color = Color(0.2, 0.3, 0.4, 1)
+background_color = Color(0.15, 0.2, 0.3, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.4, 0.4, 0.5, 1)
-ambient_light_energy = 0.5
+ambient_light_color = Color(0.5, 0.55, 0.6, 1)
+ambient_light_energy = 0.8
+tonemap_mode = 2
+tonemap_exposure = 1.2
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 0.3
+glow_strength = 0.8
+glow_blend_mode = 0
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_game_init")
@@ -42,7 +53,9 @@ environment = SubResource("Environment_1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 10, 0)
+light_energy = 1.5
 shadow_enabled = true
+shadow_bias = 0.1
 
 [node name="Arena" type="Node3D" parent="."]
 
@@ -68,6 +81,7 @@ shape = SubResource("CapsuleShape3D_player")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_1")
 
 [node name="PlayerHealth" type="Node" parent="Player"]
@@ -87,6 +101,28 @@ weapon_data = ExtResource("5_pistol")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="PistolModel" parent="Player/WeaponAttachment/WeaponManager/Weapon1" instance=ExtResource("6_pistol_model")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -0.3)
+
+[node name="Weapon2" type="Node3D" parent="Player/WeaponAttachment/WeaponManager"]
+visible = false
+script = ExtResource("4_weapon")
+weapon_data = ExtResource("6_rifle_data")
+
+[node name="MuzzlePoint" type="Marker3D" parent="Player/WeaponAttachment/WeaponManager/Weapon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="RifleModel" parent="Player/WeaponAttachment/WeaponManager/Weapon2" instance=ExtResource("6_rifle_model")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -0.3)
+
+[node name="Weapon3" type="Node3D" parent="Player/WeaponAttachment/WeaponManager"]
+visible = false
+script = ExtResource("4_weapon")
+weapon_data = ExtResource("6_sniper_data")
+
+[node name="MuzzlePoint" type="Marker3D" parent="Player/WeaponAttachment/WeaponManager/Weapon3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="SniperModel" parent="Player/WeaponAttachment/WeaponManager/Weapon3" instance=ExtResource("6_sniper_model")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -0.3)
 
 [node name="EnemySpawner" type="Node3D" parent="."]
