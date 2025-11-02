@@ -24,6 +24,18 @@
 [ext_resource type="PackedScene" path="res://assets/models/sci-fi/props/Prop_Chest.gltf" id="8_chest"]
 [ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Floor_Brick.gltf" id="9_floor_brick"]
 [ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Floor_UnevenBrick.gltf" id="9_floor_uneven"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Wall_Plaster_Straight.gltf" id="9_wall_plaster"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Wall_UnevenBrick_Straight.gltf" id="9_wall_brick"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Wall_Plaster_Window_Wide_Flat.gltf" id="9_wall_window"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Wall_Plaster_Door_Flat.gltf" id="9_wall_door"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Corner_Exterior_Brick.gltf" id="9_corner_brick"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Corner_Exterior_Wood.gltf" id="9_corner_wood"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Roof_RoundTiles_6x6.gltf" id="9_roof_tiles"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Roof_RoundTiles_4x4.gltf" id="9_roof_small"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Door_1_Flat.gltf" id="9_door"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Window_Wide_Flat1.gltf" id="9_window"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Prop_Wagon.gltf" id="9_wagon"]
+[ext_resource type="PackedScene" path="res://assets/models/medieval/structures/Prop_WoodenFence_Extension1.gltf" id="9_fence"]
 [ext_resource type="Script" uid="uid://xkvpvmdxp5ry" path="res://scripts/enemies/enemy_spawner.gd" id="9_spawner"]
 [ext_resource type="Script" uid="uid://un2fpdutm33p" path="res://scripts/systems/wave_manager.gd" id="10_wave"]
 [ext_resource type="Script" uid="uid://85nhpc601br7" path="res://scripts/ui/hud.gd" id="11_hud"]
@@ -189,6 +201,214 @@ transform = Transform3D(0.71, 0, 0.71, 0, 1, 0, -0.71, 0, 0.71, -11, 0, 10)
 
 [node name="Tile_Weathered_4" parent="Arena/MedievalFloor" instance=ExtResource("9_floor_uneven")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 11)
+
+[node name="MedievalBuildings" type="Node3D" parent="Arena"]
+
+[node name="Building1_WestHouse" type="Node3D" parent="Arena/MedievalBuildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+
+[node name="NorthWall" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_wall_plaster")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="SouthWall_Door" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_wall_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="EastWall" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_wall_plaster")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 3, 0, 0)
+
+[node name="WestWall_Window" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_wall_window")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -3, 0, 0)
+
+[node name="CornerNE" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="CornerNW" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -3, 0, -4)
+
+[node name="CornerSE" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 3, 0, 4)
+
+[node name="CornerSW" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -3, 0, 4)
+
+[node name="Roof" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_roof_tiles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Door" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Window1" parent="Arena/MedievalBuildings/Building1_WestHouse" instance=ExtResource("9_window")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -3, 2, 0)
+
+[node name="Building2_EastHouse" type="Node3D" parent="Arena/MedievalBuildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="NorthWall" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="SouthWall_Door" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_wall_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="EastWall_Window" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_wall_window")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 3, 0, 0)
+
+[node name="WestWall" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -3, 0, 0)
+
+[node name="CornerNE" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="CornerNW" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -3, 0, -4)
+
+[node name="CornerSE" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 3, 0, 4)
+
+[node name="CornerSW" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -3, 0, 4)
+
+[node name="Roof" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_roof_tiles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Door" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_door")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Window1" parent="Arena/MedievalBuildings/Building2_EastHouse" instance=ExtResource("9_window")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 3, 2, 0)
+
+[node name="Building3_NorthTower" type="Node3D" parent="Arena/MedievalBuildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="NorthWall" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="SouthWall" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="EastWall" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 2, 0, 0)
+
+[node name="WestWall" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2, 0, 0)
+
+[node name="CornerNE" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="CornerNW" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -2, 0, -2)
+
+[node name="CornerSE" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 2, 0, 2)
+
+[node name="CornerSW" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -2, 0, 2)
+
+[node name="Roof" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_roof_small")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Floor2_Walls" type="Node3D" parent="Arena/MedievalBuildings/Building3_NorthTower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="NorthWall2" parent="Arena/MedievalBuildings/Building3_NorthTower/Floor2_Walls" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="SouthWall2" parent="Arena/MedievalBuildings/Building3_NorthTower/Floor2_Walls" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="EastWall2" parent="Arena/MedievalBuildings/Building3_NorthTower/Floor2_Walls" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 2, 0, 0)
+
+[node name="WestWall2" parent="Arena/MedievalBuildings/Building3_NorthTower/Floor2_Walls" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2, 0, 0)
+
+[node name="Roof2" parent="Arena/MedievalBuildings/Building3_NorthTower" instance=ExtResource("9_roof_small")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="Building4_SouthHouse" type="Node3D" parent="Arena/MedievalBuildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 14)
+
+[node name="NorthWall" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_wall_plaster")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="SouthWall" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_wall_plaster")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="EastWall_Door" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_wall_door")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 2, 0, 0)
+
+[node name="WestWall" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_wall_plaster")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2, 0, 0)
+
+[node name="CornerNE" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+
+[node name="CornerNW" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -2, 0, -3)
+
+[node name="CornerSE" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 2, 0, 3)
+
+[node name="CornerSW" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_corner_wood")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -2, 0, 3)
+
+[node name="Roof" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_roof_tiles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Door" parent="Arena/MedievalBuildings/Building4_SouthHouse" instance=ExtResource("9_door")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 2, 0, 0)
+
+[node name="Building5_SouthEastShop" type="Node3D" parent="Arena/MedievalBuildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="NorthWall_Window" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_wall_window")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="SouthWall" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="EastWall" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_wall_brick")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 2, 0, 0)
+
+[node name="WestWall_Door" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_wall_door")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2, 0, 0)
+
+[node name="CornerNE" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+
+[node name="CornerNW" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -2, 0, -3)
+
+[node name="CornerSE" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 2, 0, 3)
+
+[node name="CornerSW" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_corner_brick")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -2, 0, 3)
+
+[node name="Roof" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_roof_tiles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Door" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_door")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2, 0, 0)
+
+[node name="Window1" parent="Arena/MedievalBuildings/Building5_SouthEastShop" instance=ExtResource("9_window")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+
+[node name="MedievalProps" type="Node3D" parent="Arena"]
+
+[node name="CentralWagon" parent="Arena/MedievalProps" instance=ExtResource("9_wagon")]
+transform = Transform3D(0.87, 0, 0.5, 0, 1, 0, -0.5, 0, 0.87, 0, 0, 2)
+
+[node name="WestFence1" parent="Arena/MedievalProps" instance=ExtResource("9_fence")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -8)
+
+[node name="WestFence2" parent="Arena/MedievalProps" instance=ExtResource("9_fence")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8)
+
+[node name="EastFence1" parent="Arena/MedievalProps" instance=ExtResource("9_fence")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 12, 0, -6)
+
+[node name="EastFence2" parent="Arena/MedievalProps" instance=ExtResource("9_fence")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 12, 0, 6)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Arena"]
 
