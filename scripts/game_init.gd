@@ -6,6 +6,7 @@ extends Node3D
 @onready var wave_manager = $WaveManager
 @onready var player = $Player
 @onready var weapon_manager = $Player/WeaponAttachment/WeaponManager
+@onready var enemy_spawner = $EnemySpawner
 
 # Enemy scene paths
 var enemy_scenes: Array[PackedScene] = []
@@ -18,6 +19,10 @@ func _ready() -> void:
 
 	# Configure wave manager
 	if wave_manager:
+		# Manually set the enemy spawner reference
+		if enemy_spawner:
+			wave_manager.enemy_spawner = enemy_spawner
+			print("Enemy spawner connected to wave manager")
 		wave_manager.set_enemy_scenes(enemy_scenes)
 		print("Wave manager configured with %d enemy types" % enemy_scenes.size())
 
