@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_base.gd" id="1_enemy"]
 [ext_resource type="Resource" uid="uid://scout_data" path="res://resources/enemy_data/scout_data.tres" id="2_data"]
-[ext_resource type="PackedScene" uid="uid://eyedrone" path="res://assets/models/Enemy_EyeDrone.gltf" id="3_model"]
+[ext_resource type="PackedScene" uid="uid://eyedrone" path="res://assets/models/sci-fi/enemies/Enemy_EyeDrone.gltf" id="3_model"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_scout"]
 radius = 0.5
