@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://heavy_robot_001"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_base.gd" id="1_enemy"]
+[ext_resource type="Resource" uid="uid://heavy_data" path="res://resources/enemy_data/heavy_data.tres" id="2_data"]
+[ext_resource type="PackedScene" uid="uid://trilobite" path="res://assets/models/Enemy_Trilobite.gltf" id="3_model"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_heavy"]
+radius = 0.8
+height = 2.5
+
+[node name="HeavyRobot" type="CharacterBody3D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_enemy")
+enemy_data = ExtResource("2_data")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CapsuleShape3D_heavy")
+
+[node name="Model" parent="." instance=ExtResource("3_model")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)

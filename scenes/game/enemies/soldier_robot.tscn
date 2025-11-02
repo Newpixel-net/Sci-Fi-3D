@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://soldier_robot_001"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_base.gd" id="1_enemy"]
+[ext_resource type="Resource" uid="uid://soldier_data" path="res://resources/enemy_data/soldier_data.tres" id="2_data"]
+[ext_resource type="PackedScene" uid="uid://quadshell" path="res://assets/models/Enemy_QuadShell.gltf" id="3_model"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_soldier"]
+radius = 0.6
+height = 2.0
+
+[node name="SoldierRobot" type="CharacterBody3D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_enemy")
+enemy_data = ExtResource("2_data")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_soldier")
+
+[node name="Model" parent="." instance=ExtResource("3_model")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
